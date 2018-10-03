@@ -7,13 +7,16 @@
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/5/">Lab 5 Description</a>
  */
-public class Bank {
-
-    public String bankName;
-
-    public Bank() {
+public final class Bank {
+    /** bankname is aaa. */
+    private String bankName;
+    /** ba.*/
+    private double balance;
+    /** hahaha. */
+    private Bank() {
         bankName = "Illini Bank";
     }
+
 
     /**
      * Withdraw money from an account.
@@ -29,6 +32,12 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (this.balance - amount < 0) {
+            return false;
+        } else {
+            balance = balance - amount;
+            return true;
+        }
     }
 
     /**
